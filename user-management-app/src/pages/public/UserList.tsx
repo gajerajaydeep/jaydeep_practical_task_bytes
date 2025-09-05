@@ -93,7 +93,7 @@ const UserList = () => {
 
             />
           </div>
-          <div className="overflow-x-auto border rounded-lg relative">
+          <div className="overflow-x-auto border border-gray-400 rounded-lg relative">
 
             <div className="h-[55vh] overflow-y-auto">
               <UserListTable

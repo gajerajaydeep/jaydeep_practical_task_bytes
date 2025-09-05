@@ -37,7 +37,7 @@ const EditUser = () => {
   const [editUser, { isLoading }] = useEditUserMutation()
 
   // SET PREV USER DATA
-  useEffect((item) => {
+  useEffect(() => {
     if (detailUserData) {
       (Object.keys(detailUserData) as (keyof UserFormValues)[]).forEach((key) => {
         if (detailUserData[key] !== undefined) {
@@ -61,7 +61,7 @@ const EditUser = () => {
   const onFormSubmit = async (data: UserFormValues) => {
     try {
       const res = await editUser({
-        id,
+        id: id,
         firstName: data.firstName,
         lastName: data.lastName,
         email: data.email,
@@ -174,19 +174,19 @@ const EditUser = () => {
 
                     />
                     <div className='flex justify-end my-5'>
-                  <Button
-                    text="Update"
-                    type="submit"
-                    
-                    disable={isLoading}
-                    isLoading={isLoading}
-                    className='px-5 py-3'
-                  />
-                </div>
+                      <Button
+                        text="Update"
+                        type="submit"
+
+                        disable={isLoading}
+                        isLoading={isLoading}
+                        className='px-5 py-3'
+                      />
+                    </div>
                   </div>
 
                 </div>
-                
+
               </form>
           }
 

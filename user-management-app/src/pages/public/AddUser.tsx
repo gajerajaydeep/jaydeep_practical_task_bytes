@@ -30,7 +30,7 @@ const AddUser = () => {
   const navigate = useNavigate()
 
   // API CALL
-  const [addUsers, { isLoading, isError }] = useAddUsersMutation()
+  const [addUsers, { isLoading }] = useAddUsersMutation()
 
   // HANDLERS FUNCTIONS
   const onFormSubmit = async (data: UserFormValues) => {

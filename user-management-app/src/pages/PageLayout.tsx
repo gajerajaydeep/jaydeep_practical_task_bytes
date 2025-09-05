@@ -4,7 +4,7 @@ import Header from "../components/layout/Header"
 const PageLayout = () => {
     return (
         <>
-            <div className="flex flex-col  w-full flex-1 h-screen bg-[#eee8f6] py-2">
+            <div className="flex flex-col  w-full flex-1 h-screen bg-[#F9F9FC] py-2">
                 <div className="w-full fixed top-1 z-50">
                     <Header />
                 </div>

@@ -28,14 +28,14 @@ const UserListTable: React.FC<UserListTableProps> = ({
   console.log(tableContent.length)
   return (
     <>
-      <table className='w-full text-center   border-spacing-0  '>
-        <thead className="w-full sticky top-0   bg-[#F9F9FC] text-[#333843] ">
+      <table className='w-full text-center   border-spacing-0  px-3'>
+        <thead className="w-full sticky top-0   bg-white text-[#333843] ">
           <tr className=''>
-            <th className='py-3 px-2'> Name</th>
-            <th className='py-3  px-2'>Email</th>
-            <th className='py-3 px-2'>Gender</th>
-            <th className='py-3 px-2'>Phone Number</th>
-            <th className='py-3 px-2'>Address</th>
+            <th className='py-3 px-2 font-bold text-lg'> Name</th>
+            <th className='py-3  px-2 font-bold text-lg'>Email</th>
+            <th className='py-3 px-2 font-bold text-lg'>Gender</th>
+            <th className='py-3 px-2 font-bold text-lg'>Phone Number</th>
+            <th className='py-3 px-2 font-bold text-lg'>Address</th>
             <th className='py-3'>Action</th>
           </tr>
         </thead>
@@ -58,19 +58,19 @@ const UserListTable: React.FC<UserListTableProps> = ({
               []
           }
         </tbody> */}
-        <tbody className='w-full bg-white'>
+        <tbody className='w-full bg-[#F9F9FC] '>
 
           {
             isLoading
               ?
-              <tr className='h-[30vh] '>
+              <tr className='h-[55vh]'>
                 <td colSpan={6} >
                   <Loader message='User list is Fetching...' />
                 </td>
               </tr>
               :
               isError ?
-                <tr className='h-[30vh]'>
+                <tr className='h-[55vh]'>
                   <td colSpan={6}>
                     User Not Faund
                   </td>
@@ -80,19 +80,19 @@ const UserListTable: React.FC<UserListTableProps> = ({
                   return (
                     <>
                       <tr className='border-b  border-gray-200'>
-                        <td className='py-8 max-w-[100px] '>{item.firstName} {item.lastName}</td>
-                        <td className='py-8 max-w-[100px]'>{item.email}</td>
-                        <td className='py-8 max-w-[100px]'>{item.gender}</td>
-                        <td className='py-8 max-w-[100px]'>{item.phoneNumber}</td>
-                        <td className='py-8 max-w-[100px] wrap-break-word'>{item.address}</td>
-                        <td className="flex  justify-around items-center  py-8 px-3">
+                        <td className='py-8 max-w-[100px]  wrap-break-word font-sm text-lg'>{item.firstName} {item.lastName}</td>
+                        <td className='py-8 max-w-[100px] wrap-break-word font-sm text-lg'>{item.email}</td>
+                        <td className='py-8 max-w-[100px] wrap-break-word font-sm text-lg'>{item.gender}</td>
+                        <td className='py-8 max-w-[100px] wrap-break-word font-sm text-lg'>{item.phoneNumber}</td>
+                        <td className='py-8 max-w-[100px] wrap-break-word font-sm text-lg'>{item.address}</td>
+                        <td className="flex  justify-around flex-col md:flex-row items-center  py-8 px-3">
 
-                          <Link to={`/user-list/edit-user/${item.id}`} className='cursor-pointer self-center'>
-                            <img src={Images.edit_icon} width={24} height={24} alt="edit button" />
+                          <Link to={`/user-list/edit-user/${item.id}`} className='cursor-pointer self-center p-2 hover:bg-[#eee8f6] hover:rounded-2xl'>
+                            <img src={Images.edit_icon} width={24} height={24} alt="edit button" className='w-[80px] md:w-[24px]' />
                           </Link>
 
-                          <button onClick={() => handleDelete?.(item.id)} className='cursor-pointer'>
-                            <img src={Images.delete_icon} width={24} height={24} alt="delete button" />
+                          <button onClick={() => handleDelete?.(item.id)} className='cursor-pointer p-2 hover:bg-[#eee8f6] hover:rounded-2xl'>
+                            <img src={Images.delete_icon} width={24} height={24} alt="delete button" className='w-[60px] md:w-[24px]'/>
                           </button>
 
                           <button onClick={() => {
@@ -100,9 +100,9 @@ const UserListTable: React.FC<UserListTableProps> = ({
                             setIsModalOpen(true)
                           }
                           }
-                            className='cursor-pointer'
+                            className='cursor-pointer p-2 hover:bg-[#eee8f6] hover:rounded-2xl'
                           >
-                            <img src={Images.eye_icon} alt='view user' width={24} height={24} />
+                            <img src={Images.eye_icon} alt='view user' width={24} height={24} className='w-[60px] md:w-[24px]'/>
                           </button>
                         </td>
                       </tr >

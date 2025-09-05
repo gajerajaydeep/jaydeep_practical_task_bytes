@@ -1,6 +1,7 @@
 import { createApi } from '@reduxjs/toolkit/query/react'
 import { fetchBaseQueryfn } from '../../fetchBaseUrl'
 import type { UserData } from '../../../types/userResponse'
+import type { EditUserRequest, UserRequest } from '../../../types/userRequest'
 
 export const usersApi = createApi({
     reducerPath: "usersApi",
@@ -17,7 +18,7 @@ export const usersApi = createApi({
         }),
 
         // delete user
-        deleteUser: builder.mutation<void, string>({
+        deleteUser: builder.mutation<unknown, string>({
             query: (id) => ({
                 url: `/users/${id}`,
                 method: "DELETE",
@@ -25,7 +26,7 @@ export const usersApi = createApi({
         }),
 
         // add user
-        addUsers: builder.mutation<void, any>({
+        addUsers: builder.mutation<void, UserRequest>({
             query: (userData) => ({
                 url: `/users`,
                 method: "POST",
@@ -39,7 +40,7 @@ export const usersApi = createApi({
         }),
 
         // edit user
-        editUser: builder.mutation<any, any>({
+        editUser: builder.mutation<void, EditUserRequest>({
             query: ({ id, ...editData }) => ({
                 url: `/users/${id}`,
                 method: "PUT",

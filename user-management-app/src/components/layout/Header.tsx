@@ -5,7 +5,7 @@ import NavBar from "../nav-items/NavBar"
 const Header = () => {
   return (
     <>
-      <div className='container flex justify-between items-center rounded-full shadow-xl px-3 md:px-5 md:py-2 bg-[#c8c4cd]  '>
+      <div className='container flex justify-between items-center rounded-full shadow-xl px-3 md:px-5 md:py-2 bg-[#F9F9FC]  '>
         {/* logo section */}
         <Link to="/">
           <div className="header-left flex justify-center items-center gap-2">
